@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         mMessageEditText =  findViewById(R.id.editText_main);
 
         mReplyHeadTextView  = findViewById(R.id.text_header_reply);
-        mReplyTextView =findViewById(R.id.editText_second);
+        mReplyTextView =findViewById(R.id.text_message_reply);
     }
 
     public void lauchSecondActivity(View view) {
@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == TEXT_REQUEST){
             if(resultCode == RESULT_OK){
                 String reply = data.getStringExtra(SecondActivity.EXTRA_REPLY);
+                System.out.println("reply" + reply);
                 mReplyHeadTextView.setVisibility(View.VISIBLE);
                 mReplyTextView.setText(reply);
                 mReplyTextView.setVisibility(View.VISIBLE);
