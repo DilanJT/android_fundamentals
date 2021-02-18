@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CurrencyConverter</string>
+    <string name="user_message_enter_amount">Enter the amount that you want to convert</string>
+    <string name="amount_in_hint">Amount in $</string>
+    <string name="convert_button">Convert</string>
+</resources>
