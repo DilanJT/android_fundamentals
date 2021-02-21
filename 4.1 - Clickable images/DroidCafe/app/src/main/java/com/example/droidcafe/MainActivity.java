@@ -31,14 +31,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        fab = findViewById(R.id.fab);
-        FirstFragment fragFirst = new FirstFragment();
-        SecondFragment secondFragment = new SecondFragment();
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Fragment fragment = new SecondFragment();
-//                FragmentManager fragmentManager = getActivity().
+                Toast.makeText(getApplicationContext(), "floating action buttton is clicked", Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new FirstFragment());
             }
         });
     }
@@ -65,9 +63,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void fabOnPressed(View view) {
-
-    }
 
     public void showIceCreamOrder(View view) {
         displayToast(getString(R.string.ice_cream_order_message));

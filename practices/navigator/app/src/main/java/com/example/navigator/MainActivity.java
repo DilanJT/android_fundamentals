@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         secondButton = (Button) findViewById(R.id.secFragBtn);
         secondButton.setOnClickListener(this);
 
+        // this code is used to default open the first fragment when app is started
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, new FirstFragment()).commit();
         }
