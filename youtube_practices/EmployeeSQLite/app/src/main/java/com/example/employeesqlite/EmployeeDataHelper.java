@@ -90,7 +90,9 @@ public class EmployeeDataHelper extends SQLiteOpenHelper {
                 Employee employee = new Employee();
                 employee.setEmployeeID(Integer.parseInt(cursor.getString(0)));
                 employee.setEmployeeName(cursor.getString(1));
-                employee.setPosition(cursor.getString(2));
+                employee.setAddress(cursor.getString(2));
+                employee.setAge(Integer.parseInt(cursor.getString(3)));
+                employee.setPosition(cursor.getString(4));
 
                 employees.add(employee);
             }while (cursor.moveToNext());

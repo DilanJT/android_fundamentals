@@ -14,7 +14,6 @@ import java.util.List;
 
 public class EmployeeView extends AppCompatActivity {
 
-    Employee employee;
     EditText empName;
     EditText empAddress;
     EditText empAge;
@@ -41,7 +40,15 @@ public class EmployeeView extends AppCompatActivity {
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int id = Integer.parseInt(empID.getText().toString());
+                String name = empName.getText().toString();
+                String address = empAddress.getText().toString();
+                String position = empPosition.getText().toString();
+                int age = Integer.parseInt(empAge.getText().toString());
 
+                Employee employee = new Employee(id, name, address, age, position);
+                update(employee);
+                finish();
             }
         });
 
@@ -59,7 +66,7 @@ public class EmployeeView extends AppCompatActivity {
     public void delete(int id){
         EmployeeDataHelper db = new EmployeeDataHelper(this);
 
-        Log.d("Reading: ", "Reading all contacts..");
+        Log.d("Deleting: ", "Deleting employee..");
         List<Employee> employees = db.getAllEmployees();
 
         boolean found = false;
@@ -68,11 +75,31 @@ public class EmployeeView extends AppCompatActivity {
             if(e.getEmployeeID() == id){
                 db.deleteEmployee(e);
                 found = true;
+                Toast.makeText(this, "Employee with ID:" + Integer.toString(id) + " deleted", Toast.LENGTH_SHORT).show();
             }
         }
 
         if(!found)
             Toast.makeText(this, "Employee with ID:" + Integer.toString(id) + " does't exist", Toast.LENGTH_SHORT).show();
+    }
+
+    public void update(Employee emp){
+        EmployeeDataHelper db = new EmployeeDataHelper(this);
+
+        List<Employee> employees = db.getAllEmployees();
+
+        boolean found = false;
+
+        for(Employee e : employees) {
+            if(e.getEmployeeID() == emp.getEmployeeID()){
+                db.updateEmployee(emp);
+                found = true;
+                Toast.makeText(this, "Employee with ID:" + Integer.toString(e.getEmployeeID()) + " updated", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        if(!found)
+            Toast.makeText(this, "Employee with ID:" + Integer.toString(emp.getEmployeeID()) + " does't exist", Toast.LENGTH_SHORT).show();
     }
 
 
