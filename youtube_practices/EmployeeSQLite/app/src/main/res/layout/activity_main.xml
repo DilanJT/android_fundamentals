@@ -32,9 +32,19 @@
         android:id="@+id/btn_show_Emps_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:text="Show Employees"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_emp_main" />
+
+    <Button
+        android:id="@+id/btn_modify_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Modify | Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_Emps_main" />
 </androidx.constraintlayout.widget.ConstraintLayout>

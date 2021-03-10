@@ -31,14 +31,6 @@ public class EmployeeLIst extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, employeeList);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), EmployeeView.class);
-                intent.putExtra("employee", employeeList.get(position));
-                startActivity(intent);
-            }
-        });
     }
 
     public void readAllEmployees() {
