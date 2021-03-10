@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmployeeSQLite">
-        <activity android:name=".EmployeeLIst"></activity>
+        <activity android:name=".EmployeeView"></activity>
+        <activity android:name=".EmployeeLIst" />
         <activity android:name=".EmployeeAdd" />
         <activity android:name=".MainActivity">
             <intent-filter>
