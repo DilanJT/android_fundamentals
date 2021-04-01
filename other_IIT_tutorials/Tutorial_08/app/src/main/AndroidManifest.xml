@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tutorial_08">
-        <activity android:name=".DynamicLayouts"></activity>
+        <activity android:name=".CustomListView2"></activity>
+        <activity android:name=".DynamicLayouts" />
         <activity android:name=".CustomListView" />
         <activity android:name=".DisplayFriends" />
         <activity android:name=".MainActivity">

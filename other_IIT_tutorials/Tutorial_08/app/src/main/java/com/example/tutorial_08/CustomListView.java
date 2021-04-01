@@ -10,6 +10,7 @@ import android.preference.PreferenceManager;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -106,5 +107,9 @@ public class CustomListView extends AppCompatActivity {
     public void finish() {
         //saveArrayPref(getApplicationContext(), "courseList", checked);
         super.finish();
+    }
+
+    public void savedata(View view) {
+
     }
 }
